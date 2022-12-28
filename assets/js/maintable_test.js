@@ -1,5 +1,5 @@
 
-
+var csv = require('jquery-csv');
 /**
  * 
  * import tablecsv from "./tablecsv.js";
