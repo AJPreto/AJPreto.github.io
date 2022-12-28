@@ -8,6 +8,27 @@ export default class{
 	}
 
 	/**
+	 * Clears existing data in the table and replaces it with new data
+	 * 
+	 * @param {string[][]} data A 2D array of data to be used as the table body
+	 * @param {string{}} headerColumns List of headings to be used  
+	 */
+
+	update(data, headerColumns = []){
+		this.clear();
+		this.setHeader(headerColumns);
+		this.setBody(data);
+	}
+
+	/**
+	 * Clears all the contents of the table including the header
+	 * 
+	 */
+	clear() {
+		this.root.innerHTML = "";
+	}
+
+	/**
 	 * Sets the table header
 	 * 
 	 * @param {string[]} headerColumns
