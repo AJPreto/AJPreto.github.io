@@ -21,4 +21,22 @@ export default class{
 		</thead>
 		`)
 	}
+
+	/**
+	 * Sets the table body
+	 * 
+	 * @param {string[][]} data a 2D array of data to be used as the table body
+	 */
+	setBody(data) {
+		const rowsHtml = data.map(row => {
+			return `
+			<tr>
+			 ${ row.map(text => `<td>${ text }</td>` ).join("") }
+			</tr>
+
+			`;
+
+		});
+		console.log(rowsHtml);
+	}
 }
