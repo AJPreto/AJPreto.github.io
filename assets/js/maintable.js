@@ -4,7 +4,7 @@ const tableRoot = document.querySelector("#csv_table");
 const tableCsv = new tablecsv(tableRoot);
 
 const organized_events_data = [
-	["December 2021", "VIII EJIBCE - Coimbra, December 20th", "Co-organiser"],
+	["December 2021", "VIII <a href='http://ejibce.github.io/'>EJIBCE</a> - Coimbra, December 20th", "Co-organiser"],
 	["May 2020", "Webinars cycle during the COVID-19 pandemic, 'Para além da pandemia', organised by the National Biochemists' Association (ANBIOQ)", "Co-organiser"],
 	["December 2019", "VII EJIBCE - Lisbon, December 20th", "Co-organiser"],
 	["December 2018", "VI EJIBCE - Oporto, December 21st", "Co-organiser"],
