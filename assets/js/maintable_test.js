@@ -1,5 +1,6 @@
 
-var csv = require('jquery-csv');
+import csv from "./jquery.csv.js"
+
 /**
  * 
  * import tablecsv from "./tablecsv.js";
@@ -19,7 +20,6 @@ var data = $.ajax({
         // call a function on complete 
     }
 });
-
 
 console.log(data)
 
