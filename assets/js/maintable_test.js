@@ -1,5 +1,5 @@
 
-import csv from "./jquery.csv.js"
+import toArrays from "./jquery.csv.js"
 
 /**
  * 
