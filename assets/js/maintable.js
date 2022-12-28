@@ -9,7 +9,7 @@ const organized_events_data = [
 	["2017", "MYD - Mind Your Data - first edition. Data science centered conference with the participation of Feedzai, Critical Software, Fraunhofer among others", "Lead organiser"],
 	["2015", "IX Biochemistry Student’s Meeting", "Lead organiser"]]
 
-tableCsv.update(data,
+tableCsv.update(organized_events_data,
 ["Date", "Description", "Role"]
 )
 
