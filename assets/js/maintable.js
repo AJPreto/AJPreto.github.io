@@ -10,6 +10,5 @@ const organized_events_data = [
 	["2015", "IX Biochemistry Student’s Meeting", "Lead organiser"]]
 
 tableCsv.update(organized_events_data,
-["Date", "Description", "Role"]
 )
 
