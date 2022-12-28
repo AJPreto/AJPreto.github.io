@@ -31,9 +31,8 @@ export default class{
 		const rowsHtml = data.map(row => {
 			return `
 			<tr>
-			 ${ row.map(text => `<td>${ text }</td>` ).join("") }
+				${ row.map(text => `<td>${text}</td>` ).join("") }
 			</tr>
-
 			`;
 
 		});
