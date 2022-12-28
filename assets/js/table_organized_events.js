@@ -1,7 +1,7 @@
 import tablecsv from "./tablecsv.js";
 
-const tableRoot = document.querySelector("#csv_table");
-const tableCsv = new tablecsv(tableRoot);
+const organized_events_table_root = document.querySelector("#csv_table");
+const organized_events_table = new tablecsv(organized_events_table_root);
 
 const organized_events_data = [
 	["December 2021", "VIII <a href='http://ejibce.github.io/' target='_blank'><b>EJIBCE</b></a> - Coimbra, December 20th", "Co-organiser"],
@@ -15,9 +15,5 @@ const organized_events_data = [
 	["March 2017", "<a href='https://www.facebook.com/Bioempreendeoteufuturo/' target='_blank'><b>Bioempreende o teu Futuro</b></a> - Coimbra, by <a href='https://www.nebioq.com/' target='_blank'><b>NEBIOQ/AAC</b></a>, March 10th-12th", "Lead organiser"],
 	["May 2016", "<a href='https://www.facebook.com/Bioempreendeoteufuturo/' target='_blank'><b>Bioempreende o teu Futuro</b></a> - Coimbra, by <a href='https://www.nebioq.com/' target='_blank'><b>NEBIOQ/AAC</b></a>, May 20th-22nd", "Co-organiser"]]
 
-const participated_events_data = [
-	["March 2015", "<a href='https://www.facebook.com/Bioempreendeoteufuturo/' target='_blank'><b>Bioempreende o teu Futuro</b></a> - Coimbra, by <a href='https://www.nebioq.com/' target='_blank'><b>NEBIOQ/AAC</b></a>, March 6th-8th", "Contestant"]]
-
-tableCsv.update(organized_events_data,
+organized_events_table.update(organized_events_data,
 )
-
