@@ -15,7 +15,9 @@ export default class{
 	setHeader(headerColumns) {
 		this.root.insertAdjacentHTML("afterbegin", `
 		<thead>
+			<tr>
 			${ headerColumns.map(text => `<th>${text}</th>`).join("") }
+			</tr>
 		</thead>
 		`)
 	}
