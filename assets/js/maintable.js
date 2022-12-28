@@ -1,5 +1,4 @@
-import tablecsv from "./tablecsv.js"; 
-var csv = require('./jquery.csv.js');
+import tablecsv from "./tablecsv.js";
 
 const tableRoot = document.querySelector("#csv_table");
 const tableCsv = new tablecsv(tableRoot);
