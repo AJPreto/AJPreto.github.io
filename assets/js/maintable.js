@@ -11,7 +11,7 @@ const organized_events_data = [
 	["April 2018", "R workshop by <a href='https://www.jest.pt/' target='_blank'><b>JEST</b></a> - Coimbra, April 23th-26th", "Co-organiser"],
 	["December 2017", "V <a href='http://ejibce.github.io/' target='_blank'><b>EJIBCE</b></a> - Coimbra, December 22nd", "Co-organiser"],
 	["November 2017", "<a href='https://www.jest.pt/myd' target='_blank'><b>MYD</b></a> first edition, by <a href='https://www.jest.pt/' target='_blank'><b>JEST</b></a>. Data science centered conference with the participation of Feedzai, Critical Software, Fraunhofer among others - Coimbra, November 25th", "Lead organiser"],
-	["May 2017", "IX Biochemistry Student’s Meeting", "Lead organiser"],
+	["May 2017", "<a href='https://www.facebook.com/enebioq/' target='_blank'><b>IX ENEBIOQ</b></a>", "Lead organiser"],
 	["March 2017", "<a href='https://www.facebook.com/Bioempreendeoteufuturo/' target='_blank'><b>Bioempreende o teu Futuro</b></a> - Coimbra, by <a href='https://www.nebioq.com/' target='_blank'><b>NEBIOQ/AAC</b></a>, March 10th-12th", "Lead organiser"],
 	["May 2016", "<a href='https://www.facebook.com/Bioempreendeoteufuturo/' target='_blank'><b>Bioempreende o teu Futuro</b></a> - Coimbra, by <a href='https://www.nebioq.com/' target='_blank'><b>NEBIOQ/AAC</b></a>, May 20th-22nd", "Co-organiser"]]
 
