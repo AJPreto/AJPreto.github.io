@@ -36,6 +36,10 @@ export default class{
 			`;
 
 		});
-		console.log(rowsHtml);
+		this.root.insertAdjacentHTML("beforeend", `
+			<tbody>
+				${ rowsHtml.join("") }
+			</tbody>
+			`)
 	}
 }
