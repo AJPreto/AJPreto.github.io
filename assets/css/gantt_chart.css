@@ -21,8 +21,6 @@ a {
 
 body {
   background: var(--body);
-  font-size: 16px;
-  font-family: sans-serif;
   padding-top: 40px;
 }
 
