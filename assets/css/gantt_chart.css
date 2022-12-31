@@ -3,11 +3,6 @@
   --body: #f5f7f8;
 }
 
-mark.white {
-    color:#fff;
-    background: none;
-}
-
 * {
   padding: 0;
   margin: 0;
