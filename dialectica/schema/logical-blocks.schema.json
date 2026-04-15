@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dialectica.local/schema/logical-blocks.schema.json",
+  "title": "Dialectica Logical Form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_text",
+    "blocks",
+    "relations"
+  ],
+  "properties": {
+    "source_text": {
+      "type": "string",
+      "description": "Original input text span."
+    },
+    "language": {
+      "type": "string",
+      "description": "BCP-47 language tag when known."
+    },
+    "parse_status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "ambiguous",
+        "underspecified",
+        "failed"
+      ],
+      "default": "ok"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/block"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "ambiguities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ambiguity"
+      },
+      "default": []
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^b[0-9]+$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "claim",
+            "goal",
+            "constraint",
+            "condition",
+            "outcome",
+            "evidence",
+            "definition",
+            "question",
+            "exception",
+            "unknown",
+            "ambiguity"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "canonical_text": {
+          "type": "string",
+          "description": "Optional normalized paraphrase for indexing."
+        },
+        "polarity": {
+          "type": "string",
+          "enum": [
+            "positive",
+            "negative",
+            "neutral",
+            "unknown"
+          ],
+          "default": "neutral"
+        },
+        "certainty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "scope": {
+          "type": "string",
+          "description": "Optional note on quantifier or modal scope."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "source_span": {
+          "$ref": "#/$defs/source_span"
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "source",
+        "target"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "supports",
+            "contradicts",
+            "implies",
+            "depends_on",
+            "defines",
+            "qualifies",
+            "unless",
+            "answers"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^b[0-9]+$"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^b[0-9]+$"
+        },
+        "certainty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^a[0-9]+$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "affected_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^b[0-9]+$"
+          },
+          "default": []
+        }
+      }
+    },
+    "source_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}
