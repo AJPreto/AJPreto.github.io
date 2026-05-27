@@ -1,107 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Glassmorphism Skills Bar</title>
+    <title>Programming Languages</title>
     <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--Stylesheet-->
     <style media="screen">
-      *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-  height:100vh;
-    background-color: #0a7aca;
-}
-.wrapper{
-    width: 40%;
-    min-width: 590px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-.container{
-    width: 100%;
-    padding: 30px 30px 50px;
-    background-color: white;
-    border: 2px solid rgba(255,255,255,0.06);
-    border-radius: 10px;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-} 
-.container *{
-    font-family: "Poppins",sans-serif;
-    color: black;
-    font-weight: 500;
-}
-h2{
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-    text-align: center;
-    font-size: 33px;
-    font-weight: bold;
-}
-.skills:not(:last-child){
-    margin-bottom: 30px;
-}
-.details{
-    width: 100%;
-    display: flex;  
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-.bar{
-    position: relative;
- 
-    border: 2px solid #0d96e0;
- 
-    border-radius: 20px;
-  
-}
-.bar div{
-    position: relative;
-    width: 0;
-    height: 9px;
-    border-radius: 10px;
-    background-color: #0d96e0;
-   
- 
-}
-#html-bar{
-    animation: html-fill 2s forwards;
-}
-@keyframes html-fill{
-    100%{
-        width: 90%;
-    }
-}
-#css-bar{
-    animation: css-fill 2s forwards;
-}
-@keyframes css-fill{
-    100%{
-        width: 75%;
-    }
-}
-#js-bar{
-    animation: js-fill 2s forwards;
-}
-@keyframes js-fill {
-    100%{
-        width: 72%;
-    }
-}
-#jQuery-bar{
-    animation: jQuery-fill 2s forwards;
-}
-@keyframes jQuery-fill{
-    100%{
-        width: 58%;
-    }
-} 
+      :root {
+        --ink: #17211f;
+        --text: #3d4743;
+        --muted: #6a7772;
+        --paper: #f7f8f4;
+        --panel: #ffffff;
+        --teal: #2f9f83;
+        --coral: #d85f4b;
+        --gold: #d4a33f;
+        --line: rgba(23, 33, 31, 0.13);
+        --shadow: 0 18px 48px rgba(23, 33, 31, 0.11);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        align-items: center;
+        background:
+          linear-gradient(135deg, rgba(47, 159, 131, 0.12), transparent 34%),
+          linear-gradient(315deg, rgba(216, 95, 75, 0.11), transparent 38%),
+          var(--paper);
+        color: var(--text);
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      .wrapper {
+        max-width: 680px;
+        width: 100%;
+      }
+
+      .container {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        width: 100%;
+      }
+
+      h2 {
+        color: var(--ink);
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1.15;
+        margin: 0 0 2rem;
+        text-align: left;
+      }
+
+      .skill-grid {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .skill {
+        --accent: var(--teal);
+        background:
+          linear-gradient(90deg, rgba(47, 159, 131, 0.08), transparent 48%),
+          #ffffff;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--accent);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .skill:nth-child(2),
+      .skill:nth-child(3) {
+        --accent: #2e6f9e;
+      }
+
+      .skill:nth-child(4),
+      .skill:nth-child(5) {
+        --accent: var(--gold);
+      }
+
+      .skill:nth-child(6),
+      .skill:nth-child(7) {
+        --accent: var(--coral);
+      }
+
+      .skill-head {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-bottom: 0.45rem;
+      }
+
+      .skill h3 {
+        color: var(--ink);
+        font-size: 1.05rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .tier {
+        background: rgba(23, 33, 31, 0.07);
+        border-radius: 999px;
+        color: var(--muted);
+        flex: 0 0 auto;
+        font-size: 0.78rem;
+        font-weight: 600;
+        line-height: 1;
+        padding: 0.4rem 0.65rem;
+      }
+
+      .skill p {
+        color: var(--text);
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 520px) {
+        body {
+          padding: 1rem;
+        }
+
+        .container {
+          padding: 1.25rem;
+        }
+
+        h2 {
+          font-size: 1.55rem;
+        }
+
+        .skill-head {
+          align-items: flex-start;
+          display: block;
+        }
+
+        .tier {
+          display: inline-block;
+          margin-top: 0.45rem;
+        }
+      }
     </style>
 </head>
 <body>
@@ -110,68 +158,56 @@ h2{
         <div class="shape-2"></div>
         <div class="container">
             <h2>Programming Languages</h2>
-            <div class="skills">
-                <div class="details">
-                    <span>Python</span>
-                    <span>95%</span>
-                </div>
-                <div class="bar">
-                    <div id="html-bar"></div>
-                </div>
-            </div>
-            <div class="skills">
-                <div class="details">
-                    <span>HTML</span>
-                    <span>80%</span>
-                </div>
-                <div class="bar">
-                    <div id="css-bar"></div>
-                </div>
-            </div>
-            <div class="skills">
-                <div class="details">
-                    <span>R</span>
-                    <span>70%</span>
-                </div>
-                <div class="bar">
-                    <div id="js-bar"></div>
-                </div>
-            </div>
-            <div class="skills">
-                <div class="details">
-                    <span>SQL</span>
-                    <span>50%</span>
-                </div>
-                <div class="bar">
-                    <div id="js-bar"></div>
-                </div>
-            </div>
-            <div class="skills">
-                <div class="details">
-                    <span>CSS</span>
-                    <span>10%</span>
-                </div>
-                <div class="bar">
-                    <div id="jQuery-bar"></div>
-                </div>
-            </div>
-            <div class="skills">
-                <div class="details">
-                    <span>Javascript</span>
-                    <span>5%</span>
-                </div>
-                <div class="bar">
-                    <div id="jQuery-bar"></div>
-                </div>
-            </div>
-            <div class="skills">
-                <div class="details">
-                    <span>C++</span>
-                    <span>5%</span>
-                </div>
-                <div class="bar">
-                    <div id="jQuery-bar"></div>
-                </div>
+            <div class="skill-grid">
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>Python</h3>
+                        <span class="tier">Primary</span>
+                    </div>
+                    <p>Daily language for scientific computing, machine learning, data workflows, automation, and tooling.</p>
+                </article>
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>R</h3>
+                        <span class="tier">Applied</span>
+                    </div>
+                    <p>Statistical analysis, omics workflows, visualisation, and academic research pipelines.</p>
+                </article>
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>SQL</h3>
+                        <span class="tier">Applied</span>
+                    </div>
+                    <p>Querying, joining, filtering, and reshaping structured datasets for analysis.</p>
+                </article>
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>HTML</h3>
+                        <span class="tier">Supporting</span>
+                    </div>
+                    <p>Static pages, documentation, portfolio work, and lightweight web presentation.</p>
+                </article>
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>CSS</h3>
+                        <span class="tier">Supporting</span>
+                    </div>
+                    <p>Layout, responsive polish, and visual refinement for personal and project pages.</p>
+                </article>
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>JavaScript</h3>
+                        <span class="tier">Occasional</span>
+                    </div>
+                    <p>Small interactions, page behaviour, and light browser-side scripting.</p>
+                </article>
+                <article class="skill">
+                    <div class="skill-head">
+                        <h3>C++</h3>
+                        <span class="tier">Occasional</span>
+                    </div>
+                    <p>Useful background for lower-level concepts and occasional technical reading or adaptation.</p>
+                </article>
             </div>
         </div>
     </div>

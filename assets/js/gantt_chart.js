@@ -12,25 +12,29 @@ function createChart(e) {
 
     if (startDay.endsWith("½")) {
       const filteredArray = daysArray.filter(day => day.textContent == startDay.slice(0, -1));
+      if (!filteredArray.length) return;
       left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2;
     } else {
       const filteredArray = daysArray.filter(day => day.textContent == startDay);
+      if (!filteredArray.length) return;
       left = filteredArray[0].offsetLeft;
     }
 
     if (endDay.endsWith("½")) {
       const filteredArray = daysArray.filter(day => day.textContent == endDay.slice(0, -1));
+      if (!filteredArray.length) return;
       width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left;
     } else {
       const filteredArray = daysArray.filter(day => day.textContent == endDay);
+      if (!filteredArray.length) return;
       width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left;
     }
 
     // apply css
     el.style.left = `${left}px`;
     el.style.width = `${width}px`;
-    if (e.type == "load") {
-      el.style.backgroundColor = el.dataset.color;
+    if (e.type === "load") {
+      el.style.setProperty("--bar-color", el.dataset.color || "#3aa687");
       el.style.opacity = 1;
     }
   });

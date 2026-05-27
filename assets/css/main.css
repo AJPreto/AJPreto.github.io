@@ -127,7 +127,7 @@ input, select, textarea {
 
 	h2 {
 		font-size: 2em;
-		letter-spacing: -1px;
+		letter-spacing: 0;
 	}
 
 		h2.alt {
@@ -2632,4 +2632,3 @@ input, select, textarea {
 
 	}
 
-	
